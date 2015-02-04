@@ -38,11 +38,10 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(callback) {
     var User = require('./models/user')(mongoose);
-    User.findOne({username: 'admin'}, function(err, user) {
+    User.findOne({email: 'admin@'+config.domain}, function(err, user) {
         if(user == null) {
             var admin = new User({
                 name: "System Administrator",
-                username: "admin",
                 email: "admin@"+config.domain,
                 password: "wifiadmin123"
             });

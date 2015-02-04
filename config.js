@@ -1,4 +1,4 @@
 module.exports = {
-	domain: "localhost",
+	domain: "localwifi.com",
 	jwt_key: "Supser Secret Key"
 }
